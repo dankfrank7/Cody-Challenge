@@ -1,0 +1,39 @@
+% Takes a vector as an argument and returns a vector. The return vector
+% contains every second element of the input vector.
+% Author: Thomas Ryan
+
+% Begin by definin the function name, input parameters and return variables
+function output = altentrys(input)
+
+% Determine the length of the input variable
+n = length(input);
+
+% Create the outpuyt vector
+output = zeros(ceil(n/2));
+
+% Initialize a counting varibale 
+z = 1;
+        
+% Loop through the index positions of the input vector 
+for i = 1:n
+    
+    % Check if the index position is odd 
+    if i/2 ~= ceil(i/2)
+        
+        % If the index is odd then add it to the output vector
+        % To do this the length of the output vector must be checked 
+        
+    end
+end
+   
+
+           
+            
+
+
+
+    
+        
+        
+        
+     

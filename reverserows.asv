@@ -1,0 +1,65 @@
+% This function takes an integer as an input variable. The function outputs
+% an matrix from one to n of increasing numbers with r and c n, however
+% every second row is reversed
+% output = reverserows(n)
+% Author: Thomas Ryan
+
+% Start by defining the function name, input arguments and output variables
+function output = reverserows(n)
+
+    % Start by creating a matrix of zeros
+    matrix1 = zeros(n);
+    
+    % Initialise a vasriable used for indexing
+    entry = 1;
+    
+    % Now make the matrix entries increase from 1 to n^2
+    % Loop through each element of the matrix
+    for r = 1:n
+        for c = 1:n
+            
+            % Make the entry at this point equal to the entry varaible 
+            matrix1(r,c) = entry;
+            
+            % Incriment the entry variable
+            entry = entry + 1;
+        end
+    end
+    
+    % Use an  imbedded function reverse the second row;
+    output = reverse2ndrow(matrix1);
+    
+% Define the name, input arguments and output variables for the auxillary
+% function
+function output = reverse2ndrow(matrix1)
+
+    % Make sure that the input matrix has at least two rows
+    if n < 2
+        output = matrix1;
+        return
+    end
+    
+    % Loop through every second row starting from the second
+    for rows = 2:2:n
+        
+        % Loop through colums from the first to the middle of the row
+        for cols = 1:floor(n/2)
+            
+            % Swap the entries
+            cache1 = matrix1(rows,cols); 
+            cache2 = matrix1(rows,n-cols-1);
+            matrix1(rows,cols) = cache2;
+    
+            matrix1(rows,n-cols-1) = cache;
+        end
+    end
+    % Define the output variable
+    output = matrix1;
+end
+end
+
+           
+            
+            
+    
+            

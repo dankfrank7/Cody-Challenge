@@ -1,0 +1,31 @@
+function output = reverse2ndrow(matrix1)
+
+    % Determine the size of the matrix
+    [rows1,cols1] = size(matrix1);
+    
+    % Make sure that the input matrix has at least two rows
+    if rows1 < 2
+        output = matrix1;
+        return
+    end
+    
+    % Loop through every second row starting from the second
+    for r1 = 2:2:rows1
+        
+        % Loop through colums from the first to the middle of the row
+        for c1 = 1:floor(cols1/2)
+            
+            % Store the current entry in a cache variable
+            cache = matrix1(r1,c1);
+            
+            % Mirror the side
+            matrix1(r1,c1) = matrix1(r1,cols1-c1+1);
+            
+            % And replace the value
+            matrix1(r1,cols1-c1+1) = cache;
+            
+        end
+    end
+    % Define the output variable
+    output = matrix1;
+end

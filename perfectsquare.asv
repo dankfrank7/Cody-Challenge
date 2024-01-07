@@ -1,0 +1,24 @@
+% This function takes an array as an input parameters and
+% checks if they were coefficients of a quadratic whether or not it would
+% be a perfect square.
+% tf = perfectsquare(a,b,c)
+% Author: Thomas Ryan
+
+% Start by defining the function name, input parameters and output variable
+function tf = perfectsquare(input)
+
+    % How long is the input vector
+    twon = length(input);
+    
+    % Make another measurable variable
+    n = twon/2;
+    
+    % Loop through each element of the input arrary
+    for m = 1:2n
+        
+    
+    
+
+    
+        
+  

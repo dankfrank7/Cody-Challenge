@@ -1,0 +1,16 @@
+% This function takes a matrix as an input parameter and returns the same
+% matrix with any row where 'NaN' appears is deleted.
+% output = deleteNaNrow(input)
+% Author: Thomas Ryan
+
+% Start by defining the function name, input parameters and output variable
+function output = deleteNaNrow(input)
+
+    % Determine the size of the matrix
+    [rows, cols] = size(input);
+    
+    %  Loop through each element of the matrix backwards
+    for r = rows:-1:1
+        for c = cols:-1:1
+            
+            if 

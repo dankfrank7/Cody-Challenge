@@ -1,0 +1,40 @@
+% This function takes a vector as an input parameter and checks if it is
+% monotomically increasing. If it is increasing the function will return a
+% boolean value 'True', otherwise the function will return false. 
+% result = monincrease(input)
+% Author: Thomas Ryan
+
+% Start by defining the function name, input arguments and output variables
+function result = monincrease(input)
+
+    % Check if the vector is empty 
+    if isempty(input)
+    
+        % If it is dislay an error message and exit out of the function
+        error('Vector is empty.')
+    end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+end
+
+

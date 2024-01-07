@@ -1,0 +1,24 @@
+% This function takes an integer argument and returns a boolean value if
+% the input is a prime number (prime = t, ~prime = f)
+% tf = isprime(input)
+% Author: Thomas Ryan
+
+
+
+% Start by defining hte function name, input parameters and output
+% variable
+function tf = isprime(input)
+
+    % Define the tf variable as true
+    tf = true;
+
+    % Loop thr
+    for i = 2:floor(input/2)
+        
+        if mod(input,i) == 0
+            
+            tf = false; 
+            return
+        end
+    end
+end

@@ -1,0 +1,44 @@
+% You have a matrix for which each row is a person and the columns represent
+% the number of quarters, nickels, dimes, and pennies that person has (in 
+% that order). What is the row index of the person with the most money?
+% with American coins: quarter = $0.25, dime = $0.10, nickel = $0.05, penny = $0.01.
+% 
+% output = MostChange(input)
+% Author: Thomas Ryan
+
+% Start by defining name, input arguments and output variables of the
+% function 
+function output = mostchange(input)
+
+    % Determine how large the input matrix is 
+    [rows,cols] = size(input);
+
+    % Define a vector that will be used to store info. This first indecc
+    % in this vector will hold the row number, the second index will store
+    % what the total amount of money was
+    cache = [0,0];
+   
+    % Loop through each element in the input matrix 
+    for r = 1:rows
+        
+        % Create a vector by multiplying each element of the input matrix
+        % column vector with a value vector which represents the value of
+        % the coins
+        valuevec = input(r,:).*[0.25,0.05,0.1,0.01];
+        
+        % Determine if the sum of this value vector is greater than the one
+        % before it
+        if sum(valuevec) > cache(2) || r == 1
+            
+            % If it is, replace the cache with info about the current
+            % largest row
+            cache = [r,sum(valuevec)];
+        end
+    end
+    
+    % Define the output variable as the row of the greatest value
+    output = cache(1);
+end
+
+            
+        

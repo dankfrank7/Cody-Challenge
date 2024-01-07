@@ -1,0 +1,41 @@
+% This function takes a single integer input parameter. The function output
+% is displayed to the command screen. The function finds any two prime
+% numbers that add together to make the input parameter. The function will
+% print out every pair of primes that it comes across that satisfies the 
+% criteria.
+% goldbach(n)
+% Author: Thomas Ryan
+
+% Begin by defining the function name, input parameters and output variable
+function goldbach(n)
+
+% Initialize a matrix for storing the pairs of numbers
+primeMatrix = [];
+
+% Loop through every number from 1 to the input parameter
+for first = 1:n
+    
+    % Check if the first number is prime
+    if isprime(first)
+        
+        % If it is prime, loop through every number again 
+        for second = 1:n 
+            
+            % Check if the number is prime 
+            if isprime(second)
+                
+                % If it is prime check if the first and second numbers add
+                % to give the input variable
+                if first + second == n && ~ismember(first,primeMatrix)
+                    
+                    % Add the two numbers to the prime matrix 
+                    primeMatrix = [primeMatrix; first, second];
+                end
+            end
+        end
+    end
+end
+
+% Display the primeMatrix to the screen
+disp(primeMatrix)
+return
